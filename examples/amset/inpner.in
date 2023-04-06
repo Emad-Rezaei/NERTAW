@@ -1,0 +1,14 @@
+smrT 300.0
+Evwan 7.3486
+Ev 4.64939961
+Eg 0.17
+Bex 0.5
+ner_bext 1.0
+prefix InSb
+mubn 0.1
+mustep 0.001
+eps0 1.0e-04
+savematrix 0
+calcseeb 0
+ratecode amset
+amesh 51

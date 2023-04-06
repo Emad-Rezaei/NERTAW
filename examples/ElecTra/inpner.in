@@ -1,0 +1,14 @@
+smrT 200.0
+Evwan 6.4
+Ev 0.0
+Eg 1.12
+Bex 0.6
+ner_bext 1.0
+prefix Si
+mubn 0.1
+mustep 0.005
+eps0 1.0e-05
+savematrix 0
+calcseeb 0
+ratecode electra
+elctcharge e

@@ -1,0 +1,18 @@
+smrT 300.0
+Evwan 9.9023
+Ev 6.50
+Eg 0.17
+Bex 0.2
+ner_bext 1.0
+prefix Bi
+mubn 0.1
+mustep 0.001
+eps0 1.0e-05
+savematrix 1
+calcseeb 0
+ratecode crta
+Tmin 300
+Tmax 301
+Tstep 1
+ctau 10
+

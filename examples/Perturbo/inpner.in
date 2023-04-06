@@ -1,0 +1,13 @@
+smrT 200.0
+Evwan 9.10
+Ev 6.06
+Eg 0.72
+Bex 1.3
+ner_bext 1.0
+prefix GaSb
+mubn 0.1
+mustep 0.005
+eps0 1.0e-05
+savematrix 0
+calcseeb 0
+ratecode perturbo

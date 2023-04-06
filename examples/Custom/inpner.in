@@ -1,0 +1,13 @@
+smrT 100.0
+Evwan 6.86
+Ev 6.50
+Eg 0.17
+Bex 0.9
+ner_bext 1.0
+prefix Ge
+mubn 0.2
+mustep 0.02
+eps0 1.0e-05
+savematrix 1
+calcseeb 1
+ratecode custom
