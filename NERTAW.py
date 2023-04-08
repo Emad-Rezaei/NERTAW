@@ -171,12 +171,13 @@ def pertread(prefix,eigstep,eigint,eigpt,Ec,Ev,x,T,kb,eps0,q,h):
         if temper[i,0]==temper[0,0]:
             dop+=1
     tmp=int(per.shape[0]/nk/nbnd/dop)
-    Dop=np.zeros((dop * tmp, tmp))
+    Dop=np.zeros((dop, tmp))
     Temp=np.zeros(tmp)
     print(f"number of doping points: {dop}")
     print(f"number of temperature points: {tmp}")
-    for idp in range(0,dop*tmp):
-        Dop[idp,:]=temper[idp,2]
+    for itmp in range(0,tmp):
+        for idp in range(0,dop):
+            Dop[idp,itmp]=temper[itmp * tmp + idp, 2]
     print("temperature values are:")
     for itmp in range(0,tmp):
         Temp[itmp]=temper[dop*itmp,0]
@@ -184,7 +185,7 @@ def pertread(prefix,eigstep,eigint,eigpt,Ec,Ev,x,T,kb,eps0,q,h):
     print("Doping values are:")
     for itmp in range(0,tmp):
         for idp in range(0,dop):
-            print(Dop[idp + tmp * itmp, itmp])
+            print(Dop[idp, itmp])
     tau=np.zeros((eigpt,dop,tmp))
     sdfde=np.zeros((eigpt,1)) #sum of delta functio
     for ieig in range(0,eigpt):
@@ -213,7 +214,7 @@ def pertread(prefix,eigstep,eigint,eigpt,Ec,Ev,x,T,kb,eps0,q,h):
 
     for itmp in range(0,tmp):
         for idp in range(0,dop):
-            mta="T{}dop{:.3e}tau.txt".format(str(Temp[itmp]),Dop[idp+tmp*itmp, itmp])
+            mta="T{}dop{:.3e}tau.txt".format(str(Temp[itmp]),Dop[idp, itmp])
             with open(mta,'w') as f:
                 f.writelines('energy(eV)    tau(s)' + '\n')
                 np.savetxt(f,np.c_[eig,tau[:,idp,itmp]], delimiter=' ')
@@ -476,7 +477,7 @@ def intmatseeb(dop,tmp,mupt,ndir,eigpt,TDFseeb,mu,Temp,kb,eps0,sbsig,sbBmtr,sbkm
             #B 3*3 matrix 
                 sbmB=sbBmtr[imu,1:,idp,itmp].reshape(3,3)
             #K 3*3 matrix 
-                sbmk[0,0]=sbkmtr[imu,1:,idp,itmp].reshape(3,3)
+                sbmk=sbkmtr[imu,1:,idp,itmp].reshape(3,3)
                 if det(sbmsig)!=0.00:
                     sbmrho[imu,idp,itmp,:,:]=inv(sbmsig)
                     sbmS[imu,idp,itmp,:,:]=np.matmul(sbmrho[imu,idp,itmp,:,:],sbmB)
