@@ -20,9 +20,10 @@ $   $  $$$$   $ $      $     $       $   $$       $$
 ''')
 
 print('''please cite the following paper:
-Calculation of thermomagnetic properties using first-principles density functional theory,
-Rezaei, S Emad and Zebarjadi, Mona and Esfarjani, Keivan,
-Computational Materials Science
+First-principles-aided evaluation of the Nernst coefficient beyond the constant relaxation time approximation,
+S Emad Rezaei, Mona Zebarjadi, Keivan Esfarjani,
+Computational Materials Science,
+https://doi.org/10.1016/j.commatsci.2023.112193
 ''')
 #Default parameters
 T=300.00
