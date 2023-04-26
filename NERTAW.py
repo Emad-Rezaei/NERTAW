@@ -5,7 +5,6 @@ from numpy.linalg import inv, det
 import h5py
 import math
 import time
-import matplotlib.pyplot as plt
 from pymatgen.electronic_structure.core import Spin, Orbital
 from amset.io import load_mesh
 
